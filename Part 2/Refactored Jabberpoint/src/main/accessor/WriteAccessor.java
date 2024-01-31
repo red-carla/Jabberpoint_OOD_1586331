@@ -1,6 +1,8 @@
 package main.accessor;
+
 import main.exception.AccessorException;
 import main.model.Presentation;
+
 import java.io.IOException;
 
 /**
@@ -15,10 +17,11 @@ public interface WriteAccessor {
 
     /**
      * Saves the presentation to a file
+     *
      * @param p Presentation to save
      * @param fn String filename to save to
      * @throws AccessorException if the file cannot be written to
-     * @throws IOException      if the file cannot be written to
+     * @throws IOException if the file cannot be written to
      */
     void saveFile(Presentation p, String fn) throws AccessorException, IOException;
 

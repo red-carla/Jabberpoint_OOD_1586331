@@ -8,6 +8,7 @@ package main.exception;
 public class AccessorException extends Exception {
     /**
      * Constructor for AccessorException
+     *
      * @param message error message to display
      */
     public AccessorException(String message) {

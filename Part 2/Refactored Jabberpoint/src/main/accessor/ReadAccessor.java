@@ -17,10 +17,11 @@ public interface ReadAccessor {
 
     /**
      * Loads the presentation from a file
+     *
      * @param p Presentation to load into
      * @param fn String filename to load from
      * @throws AccessorException if the file cannot be read
-     * @throws IOException       if the file cannot be read
+     * @throws IOException if the file cannot be read
      */
     void loadFile(Presentation p, String fn) throws AccessorException, IOException;
 

@@ -6,17 +6,18 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
- *  KeyController handles key events for the SlideViewerComponent
+ * KeyController handles key events for the SlideViewerComponent
  *
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.61 2024/01/10 Carla Redmond
  */
 
 public class KeyController extends KeyAdapter {
-    private final SlideViewerComponent slideViewerComponent;
+    private final SlideViewerComponent slideViewerComponent; //The SlideViewerComponent to be controlled
 
     /**
      * Constructor for KeyController
+     *
      * @param slideViewerComponent the SlideViewerComponent to be controlled
      */
     public KeyController(SlideViewerComponent slideViewerComponent) {
@@ -25,6 +26,7 @@ public class KeyController extends KeyAdapter {
 
     /**
      * Process a key press event
+     *
      * @param keyEvent the event to be processed
      */
     @Override

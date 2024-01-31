@@ -7,11 +7,11 @@ import java.util.Map;
 /**
  * StyleCollection is a collection of styles
  *
- *  @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- *  @version 1.61 2024/01/10 Carla Redmond
+ * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
+ * @version 1.61 2024/01/10 Carla Redmond
  */
 public class StyleCollection {
-    private final Map<Integer, Style> styles;
+    private final Map<Integer, Style> styles; // The styles
 
     /**
      * Constructor for StyleCollection
@@ -42,6 +42,7 @@ public class StyleCollection {
 
     /**
      * Adds a style to the collection
+     *
      * @param level the level of the style
      * @param style the style
      */
@@ -51,6 +52,7 @@ public class StyleCollection {
 
     /**
      * Get the style
+     *
      * @param level the level of the style
      * @return the style
      */
@@ -60,6 +62,7 @@ public class StyleCollection {
 
     /**
      * Updates the style with the given level
+     *
      * @param level the level of the style
      * @param style the style
      */
@@ -69,6 +72,7 @@ public class StyleCollection {
 
     /**
      * Removes the style with the given level
+     *
      * @param level the level of the style
      */
     public void removeStyle(int level) {
@@ -77,6 +81,7 @@ public class StyleCollection {
 
     /**
      * Gets the number of styles
+     *
      * @return the number of styles
      */
     public int getNumberOfStyles() {

@@ -1,7 +1,7 @@
 package main.ui;
 
 import main.model.Presentation;
-import main.util.StringResources;
+import main.util.TextEnums;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,14 +16,13 @@ import java.io.Serial;
  * @version 1.61 2024/01/10 Carla Redmond
  */
 public class SlideViewerFrame extends JFrame {
-    public static final int WIDTH = 1200;
-    public static final int HEIGHT = 800;
     @Serial
-    private static final long serialVersionUID = 3227L;
+    private static final long serialVersionUID = 3227L; //Needed for Serializable
 
     /**
      * Constructor for SlideViewerFrame
-     * @param title       the title of the frame
+     *
+     * @param title the title of the frame
      * @param presentation the presentation to be shown
      */
     public SlideViewerFrame(String title, Presentation presentation) {
@@ -35,12 +34,12 @@ public class SlideViewerFrame extends JFrame {
 
     /**
      * Set up the window
+     *
      * @param slideViewerComponent the SlideViewerComponent to be controlled
-     * @param presentation        the presentation to be shown
+     * @param presentation the presentation to be shown
      */
-    public void setupWindow(SlideViewerComponent
-                                    slideViewerComponent, Presentation presentation) {
-        setTitle(StringResources.JABTITLE);
+    public void setupWindow(SlideViewerComponent slideViewerComponent, Presentation presentation) {
+        setTitle(TextEnums.JAB_TITLE.getName());
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -50,7 +49,7 @@ public class SlideViewerFrame extends JFrame {
         getContentPane().add(slideViewerComponent);
         addKeyListener(new KeyController(slideViewerComponent)); //Add a controller
         setMenuBar(new MenuController(this, slideViewerComponent));    //Add another controller
-        setSize(new Dimension(WIDTH, HEIGHT)); //Same sizes a slide has
+        setSize(new Dimension(TextEnums.WIDTH.getValue(), TextEnums.HEIGHT.getValue()));
         setVisible(true);
     }
 }

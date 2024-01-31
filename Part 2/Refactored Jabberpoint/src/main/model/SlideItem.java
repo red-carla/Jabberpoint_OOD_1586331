@@ -13,7 +13,7 @@ import java.awt.image.ImageObserver;
  */
 
 public abstract class SlideItem {
-    private final int level;
+    private final int level; // The level of the item
 
     /**
      * Constructor for SlideItem
@@ -36,10 +36,10 @@ public abstract class SlideItem {
     /**
      * gets the bounding box
      *
-     * @param g        the graphics object
+     * @param g the graphics object
      * @param observer the image observer
-     * @param scale    the scale
-     * @param style    the style
+     * @param scale the scale
+     * @param style the style
      * @return Rectangle
      */
     public abstract Rectangle getBoundingBox(Graphics g,
@@ -48,11 +48,11 @@ public abstract class SlideItem {
     /**
      * draws the item
      *
-     * @param x        the x coordinate
-     * @param y        the y coordinate
-     * @param scale    the scale
-     * @param g        the graphics object
-     * @param style    the style
+     * @param x the x coordinate
+     * @param y the y coordinate
+     * @param scale the scale
+     * @param g the graphics object
+     * @param style the style
      * @param observer the image observer
      */
 

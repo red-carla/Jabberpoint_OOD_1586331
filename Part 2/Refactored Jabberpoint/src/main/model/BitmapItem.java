@@ -18,13 +18,14 @@ import java.util.logging.Logger;
  */
 
 public class BitmapItem extends SlideItem {
-    private static final Logger logger = Logger.getLogger(BitmapItem.class.getName());
-    public final String imagePath;
-    private BufferedImage bufferedImage;
+    private static final Logger logger = Logger.getLogger(BitmapItem.class.getName()); // Logger
+    public final String imagePath; // The path to the image
+    private BufferedImage bufferedImage; // The image
 
     /**
      * Constructor for BitmapItem
-     * @param level   The level of this item
+     *
+     * @param level     The level of this item
      * @param imagePath The path to the image
      */
     public BitmapItem(int level, String imagePath) {
@@ -35,6 +36,7 @@ public class BitmapItem extends SlideItem {
 
     /**
      * Loads the image
+     *
      * @param imagePath The path to the image
      */
     private void loadImage(String imagePath) {
@@ -51,10 +53,11 @@ public class BitmapItem extends SlideItem {
 
     /**
      * get the bounding box
-     * @param g The graphics object
+     *
+     * @param g        The graphics object
      * @param observer The image observer
-     * @param scale The scale
-     * @param myStyle The style
+     * @param scale    The scale
+     * @param myStyle  The style
      * @return Rectangle
      */
     public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
@@ -66,11 +69,12 @@ public class BitmapItem extends SlideItem {
 
     /**
      * Draws the image
-     * @param x The x coordinate
-     * @param y The y coordinate
-     * @param scale The scale
-     * @param g The graphics object
-     * @param myStyle The style
+     *
+     * @param x        The x coordinate
+     * @param y        The y coordinate
+     * @param scale    The scale
+     * @param g        The graphics object
+     * @param myStyle  The style
      * @param observer The image observer
      */
     public void draw(int x, int y, float scale, Graphics g, Style myStyle, ImageObserver observer) {
@@ -81,6 +85,7 @@ public class BitmapItem extends SlideItem {
     }
 
     /**
+     * String conversion for debug purposes
      * @return String
      */
     public String toString() {

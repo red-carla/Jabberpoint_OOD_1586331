@@ -2,6 +2,7 @@ package main.model;
 
 import main.util.Style;
 import main.util.StyleCollection;
+import main.util.TextEnums;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
@@ -16,11 +17,9 @@ import java.util.List;
  */
 
 public class Slide {
-    public static final int WIDTH = 1200;
-    public static final int HEIGHT = 800;
-    protected String title; //The title is kept separately
-    protected ArrayList<SlideItem> items;
-    private final StyleCollection styleCollection;
+    private final StyleCollection styleCollection; //The style collection
+    protected String title; //The title of the slide
+    protected ArrayList<SlideItem> items; //The items on the slide
 
     /**
      * Constructor for Slide
@@ -32,6 +31,7 @@ public class Slide {
 
     /**
      * add an item to the slide
+     *
      * @param anItem the SlideItem to be added
      */
     public void appendText(SlideItem anItem) {
@@ -40,6 +40,7 @@ public class Slide {
 
     /**
      * get the title of the Slide
+     *
      * @return the slide title
      */
     public String getTitle() {
@@ -48,6 +49,7 @@ public class Slide {
 
     /**
      * set the new title of the slide
+     *
      * @param newTitle the new title of the slide
      */
     public void setTitle(String newTitle) {
@@ -56,7 +58,8 @@ public class Slide {
 
     /**
      * add a text item to the slide
-     * @param level  the level of the text item
+     *
+     * @param level the level of the text item
      * @param message the message of the text item
      */
     public void appendText(int level, String message) {
@@ -65,6 +68,7 @@ public class Slide {
 
     /**
      * get all the SlideItems in a List
+     *
      * @return all the SlideItems in a List
      */
     public List<SlideItem> getSlideItems() {
@@ -74,6 +78,7 @@ public class Slide {
 
     /**
      * get the size of the slideItems collection
+     *
      * @return the number of SlideItems
      */
     public int getSize() {
@@ -82,6 +87,7 @@ public class Slide {
 
     /**
      * draw the slide
+     *
      * @param g The graphics object
      * @param area The area to draw in
      * @param view The view
@@ -104,10 +110,11 @@ public class Slide {
 
     /**
      * Calculates the scale to draw a slide
+     *
      * @param area The area to draw in
      * @return the scale to draw a slide
      */
     private float getScale(Rectangle area) {
-        return Math.min(((float) area.width) / ((float) WIDTH), ((float) area.height) / ((float) HEIGHT));
+        return Math.min(((float) area.width) / ((float) TextEnums.WIDTH.getValue()), ((float) area.height) / ((float) TextEnums.HEIGHT.getValue()));
     }
 }

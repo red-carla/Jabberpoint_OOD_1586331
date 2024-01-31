@@ -28,6 +28,7 @@ public class Presentation {
 
     /**
      * Constructor for Presentation
+     *
      * @param slideViewerComponent the SlideViewerComponent to be controlled
      */
     public Presentation(SlideViewerComponent slideViewerComponent) {
@@ -37,6 +38,7 @@ public class Presentation {
 
     /**
      * get the number of slides in the presentation
+     *
      * @return the number of slides in the presentation
      */
     public int getSize() {
@@ -45,6 +47,7 @@ public class Presentation {
 
     /**
      * get the title of the presentation
+     *
      * @return the title of the presentation
      */
     public String getTitle() {
@@ -53,6 +56,7 @@ public class Presentation {
 
     /**
      * set the title of the presentation
+     *
      * @param nt title of the presentation
      */
     public void setTitle(String nt) {
@@ -61,6 +65,7 @@ public class Presentation {
 
     /**
      * set the slide viewer component to control
+     *
      * @param slideViewerComponent the SlideViewerComponent to be controlled
      */
     public void setShowView(SlideViewerComponent slideViewerComponent) {
@@ -69,6 +74,7 @@ public class Presentation {
 
     /**
      * get the current slide number
+     *
      * @return the current slide number
      */
     public int getCurrentSlideNumber() {
@@ -77,6 +83,7 @@ public class Presentation {
 
     /**
      * set the current slide number
+     *
      * @param currentSlideNumber the current slide number
      */
     public void setCurrentSlideNumber(int currentSlideNumber) {
@@ -85,6 +92,7 @@ public class Presentation {
 
     /**
      * set the slide number
+     *
      * @param number the number of the slide to be shown
      */
     public void setSlideNumber(int number) {
@@ -95,7 +103,7 @@ public class Presentation {
     }
 
     /**
-     *  Clear the presentation
+     * Clear the presentation
      */
     public void clear() {
         showList = new ArrayList<>();
@@ -104,6 +112,7 @@ public class Presentation {
 
     /**
      * add a slide to the presentation
+     *
      * @param slide the slide to be added
      */
     public void append(Slide slide) {
@@ -113,6 +122,7 @@ public class Presentation {
 
     /**
      * get the slide with the given number
+     *
      * @param number the number of the slide to be returned
      * @return the slide with the given number
      */
@@ -125,6 +135,7 @@ public class Presentation {
 
     /**
      * get the current slide
+     *
      * @return the current slide
      */
     public Slide getCurrentSlide() {
@@ -133,6 +144,7 @@ public class Presentation {
 
     /**
      * exit the application
+     *
      * @param s the exit status
      */
     public void exit(int s) {

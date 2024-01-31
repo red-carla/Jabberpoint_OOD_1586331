@@ -5,7 +5,7 @@ import main.accessor.XMLReadAccessor;
 import main.exception.AccessorException;
 import main.model.Presentation;
 import main.ui.SlideViewerFrame;
-import main.util.StringResources;
+import main.util.TextEnums;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class JabberPoint {
     public static void main(String[] argv) throws AccessorException, IOException {
 
         Presentation presentation = new Presentation();
-        new SlideViewerFrame(StringResources.JABVERSION, presentation);
+        new SlideViewerFrame(TextEnums.JAB_VERSION.getName(), presentation);
         if (argv.length == 0) { // No args: use demo
             new DemoReadAccessor().loadFile(presentation, "");
         } else {

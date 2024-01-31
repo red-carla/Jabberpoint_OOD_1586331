@@ -1,5 +1,4 @@
 package main.ui;
-
 import javax.swing.*;
 
 /**

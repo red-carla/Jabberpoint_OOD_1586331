@@ -7,13 +7,14 @@ import main.model.Slide;
 /**
  * A read accessor for a demo presentation in Jabberpoint
  *
- *  @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- *  @version 1.61 2024/01/10 Carla Redmond
+ * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
+ * @version 1.61 2024/01/10 Carla Redmond
  */
 public class DemoReadAccessor implements ReadAccessor {
     /**
      * Load a presentation from a file
-     * @param presentation The presentation to load
+     *
+     * @param presentation   The presentation to load
      * @param unusedFilename The filename to load from
      */
     public void loadFile(Presentation presentation, String unusedFilename) {

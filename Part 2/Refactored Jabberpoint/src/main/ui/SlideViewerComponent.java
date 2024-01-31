@@ -2,6 +2,7 @@ package main.ui;
 
 import main.model.Presentation;
 import main.model.Slide;
+import main.util.TextEnums;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,28 +19,29 @@ import java.io.Serial;
 public class SlideViewerComponent extends JComponent {
 
     @Serial
-    private static final long serialVersionUID = 227L;
-    private static final Color BGCOLOR = Color.white;
-    private static final Color COLOR = Color.black;
-    private static final String FONTNAME = "Dialog";
-    private static final int FONTSTYLE = Font.BOLD;
-    private static final int FONTHEIGHT = 10;
-    private static final int XPOS = 1100;
-    private static final int YPOS = 20;
-    private Slide slide; //The current slide
+    private static final long serialVersionUID = 227L; //Serial version UID
+    private static final Color BGCOLOR = Color.white; //Background color
+    private static final Color COLOR = Color.black; //Color of the text
+    private static final String FONT_NAME = "Dialog"; //Font name
+    private static final int FONT_STYLE = Font.BOLD; //Font style
+    private static final int FONT_HEIGHT = 10; //Font height
+    private static final int X_POS = 1100; //Position of page number
+    private static final int Y_POS = 20; //Position of page number
+    private transient Slide slide; //The current slide
     private Font labelFont = null; //The font for labels
-    private Presentation presentation = null; //The presentation
-    private JFrame frame = null;
+    private transient Presentation presentation = null; //The presentation
+    private JFrame frame = null; //The frame
 
     /**
      * Constructor for SlideViewerComponent
-     * @param pres  the presentation to be shown
+     *
+     * @param pres the presentation to be shown
      * @param frame the frame to be used as parent for the Dialogs
      */
     public SlideViewerComponent(Presentation pres, JFrame frame) {
         setBackground(BGCOLOR);
         presentation = pres;
-        labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
+        labelFont = new Font(FONT_NAME, FONT_STYLE, FONT_HEIGHT);
         this.frame = frame;
     }
 
@@ -55,19 +57,21 @@ public class SlideViewerComponent extends JComponent {
      */
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(Slide.WIDTH, Slide.HEIGHT);
+        return new Dimension(TextEnums.WIDTH.getValue(), TextEnums.HEIGHT.getValue());
     }
 
     /**
-     * update the presentation
+     * Update the presentation
+     *
      * @param presentation the presentation to be shown
-     * @param data        the slide to be shown
+     * @param data the slide to be shown
      */
     public void update(Presentation presentation, Slide data) {
         if (data == null) {
             repaint();
             return;
         }
+
         this.presentation = presentation;
         this.slide = data;
         repaint();
@@ -75,14 +79,16 @@ public class SlideViewerComponent extends JComponent {
     }
 
     /**
-     * clear the presentation
+     * Clear the presentation
      */
     void clear() {
         presentation.clear();
+        repaint();
     }
 
     /**
-     *  set the slide number
+     * Set the slide number
+     *
      * @param number the number of the slide to be shown
      */
     public void setSlideNumber(int number) {
@@ -91,7 +97,7 @@ public class SlideViewerComponent extends JComponent {
     }
 
     /**
-     * go to the previous slide
+     * Go to the previous slide
      */
     public void prevSlide() {
         if (presentation.getCurrentSlideNumber() > 0 && presentation.getCurrentSlideNumber() <= presentation.getSize() - 1) {
@@ -109,7 +115,8 @@ public class SlideViewerComponent extends JComponent {
     }
 
     /**
-     *  paint the component
+     * paint the component
+     *
      * @param g the graphics object
      */
     @Override
@@ -121,8 +128,8 @@ public class SlideViewerComponent extends JComponent {
         }
         g.setFont(labelFont);
         g.setColor(COLOR);
-        g.drawString(String.format("Slide %s of %s", 1 + presentation.getCurrentSlideNumber(), presentation.getSize()), XPOS, YPOS);
-        Rectangle area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
+        g.drawString(String.format("Slide %s of %s", 1 + presentation.getCurrentSlideNumber(), presentation.getSize()), X_POS, Y_POS);
+        Rectangle area = new Rectangle(0, Y_POS, getWidth(), (getHeight() - Y_POS));
         slide.draw(g, area, this);
     }
 

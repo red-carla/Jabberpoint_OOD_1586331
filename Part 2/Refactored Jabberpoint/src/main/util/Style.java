@@ -14,11 +14,11 @@ import java.awt.*;
 
 public class Style {
 
-    private final int indent;
-    private final Color color;
-    private final Font font;
-    private final int fontSize;
-    private final int leading;
+    private final int indent; // The indent
+    private final Color color; // The color
+    private final Font font; // The font
+    private final int fontSize; // The font size
+    private final int leading; // The leading
 
     /**
      * @param indent the indent
@@ -29,7 +29,7 @@ public class Style {
     public Style(int indent, Color color, int fontSize, int leading) {
         this.indent = indent;
         this.color = color;
-        font = new Font(StringResources.FONTNAME, Font.BOLD, fontSize);
+        font = new Font(TextEnums.FONT_NAME.getName(), Font.BOLD, fontSize);
         this.leading = leading;
         this.fontSize = fontSize;
     }
